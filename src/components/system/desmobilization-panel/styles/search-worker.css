@@ -1,0 +1,31 @@
+.search-container {
+    display: flex;
+    padding: 20px;
+}
+
+.search-box {
+    /* width: 100px; */
+    margin: 0px 20px;
+}
+
+.search-button > button {
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+
+
+.search-title {
+    margin: 10px 40px;
+}
+.button {
+    cursor: pointer;
+}
+
+.btn-cancel{
+    padding-left: 200px;
+}
+
+.controllers-search{
+    display: flex;
+}

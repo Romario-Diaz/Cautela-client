@@ -1,0 +1,41 @@
+.space-line {
+    color: dimgray
+}
+
+.void-div {
+    margin-bottom: 15px;
+}
+
+
+/* AQUI ESTARA EL MAIN  */
+
+.perfil-des-container {
+    /* border: 1px solid red; */
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.perfil-container {
+    border: 1px solid gray;
+    width: 33%;
+    padding: 10px;
+    height: 300px;
+    /* padding-right: 4%; */
+}
+
+
+
+
+
+/* INFORMACION DEL USUARIO */
+
+/* ESTILOS DEL DOCUMENTO  */
+
+
+.button {
+    width: 100%;
+    padding: 10px 0px;
+    cursor: pointer;
+} 

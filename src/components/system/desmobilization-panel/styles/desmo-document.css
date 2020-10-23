@@ -1,0 +1,176 @@
+
+.document-des-container {
+    border: 1px solid gray;
+    width: 63%;
+}
+
+
+.document-body {
+    margin: auto;
+    /* border: 1px solid grey; */
+    box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.4);
+    margin: 20px;
+    padding: 20px;
+}
+
+.document-head {
+    border: 1px solid black;
+
+    margin-bottom: 15px;
+    height: 45px;
+    display: flex;
+}
+
+.document-logo {
+    border-right: 1px solid black;
+    height: 45px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.document-logo-image {
+    width: 90%;
+    margin: auto;
+}
+
+.document-title {
+    border-right: 1px solid black;
+    height: 45px;
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.document-info {
+    width: 130px;
+    text-align: center;
+    align-items: center;
+    margin: 3px;
+}
+
+.document-info-paragraph {
+    font-size: 8px;
+
+}
+
+.document-worker-information {
+    border: 1px solid black;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ---------------------------------------- */
+
+.document-worker-information-right {
+    width: 180px;
+    /* border-right: 1px solid black; */
+}
+
+.document-worker-information-camp {
+    font-size: 10px;
+    display: flex;
+    margin: 10px 10px 10px 2px;
+}
+
+.document-worker-information-camp > .name-left {
+    /* background-color: red; */
+    font-size: 10px;
+    width: 150px;
+}
+
+.document-worker-information-camp > .name-right {
+    /* background-color: red; */
+    width: 60px;
+    font-size: 10px;
+}
+
+.dos-puntos {
+    margin: 0px 5px;
+}
+
+/* ...................................... */
+.document-adeudos-title {
+    text-decoration: underline;
+}
+
+
+
+.document-adeudos {
+    border: 1px solid black;
+
+}
+
+/* .............................  */
+
+.document-areas {
+    margin: 30px 50px 30px 2px;
+    display: flex;
+}
+
+.areas-title {
+    /* background-color: red; */
+    width: 130px;
+    font-size: 10px;
+}
+
+.dos-puntos-areas {
+    margin: 0px 20px;
+    font-size: 10px;
+}
+
+.document-areas-inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size:10px;
+}
+
+/* ............................................ */
+.document-firm {
+    border: 1px solid black;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.document-firm-lider {
+    padding: 35px 30px 15px 5px;
+    text-align: center;
+    /* font-size: 11px; */
+}
+
+.document-firm-worker {
+    padding: 35px 30px 15px 5px;
+    text-align: center;
+  
+}
+
+.text {
+    font-size: 10px;
+}
+
+.text-footer {
+    font-size: 9px;
+    font-weight: bold;
+    padding: 5px 0px;
+    width: 90%;
+}
+
+.firm-worker {
+    position: absolute;
+    margin-left: 60px;
+    margin-top: -15px;
+    width:60px;
+}
+
+.firm-bottom {
+    width: 70px;
+    margin-top: -15px;
+    margin-left: -30px;
+    position: absolute;
+}

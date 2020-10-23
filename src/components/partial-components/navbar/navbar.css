@@ -1,0 +1,35 @@
+
+
+.navbar-containers {
+    background-color: cadetblue;
+    height: 60px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    height: 60px;
+    align-items: center;
+}
+
+.list-group {
+    height: inherit;
+
+}
+
+.list {
+    list-style-type: none;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.list > .list-item {
+    text-decoration: none;
+    color: dimgrey;
+    padding: 0 20px; 
+}
+  

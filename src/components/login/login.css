@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    padding: 20px;
+}
+
+.container-login {
+    /* border: 1px solid blue; */
+    margin: auto;
+    width: 25%;
+    /* height: 100vh; */
+}
+
+.login-all-body {
+    border: 1px solid dimgrey;
+    margin-top: 110px;
+
+}
+
+.form-group {
+    padding: 20px 45px 0px 20px;
+}
+
+.form-group > input {
+    padding: 10px;
+    width: 100%;
+}
+
+.button-send-container {
+    padding: 20px;
+}
+
+.button-send {
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+}
