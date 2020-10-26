@@ -17,6 +17,12 @@ class DesmobilizationService {
     }
 
     newDesmobilizationDocument(name, perfil) {
+        // aqui tambien tengo que pasar el id de la cautela para que se envie al correo
+        // el codigo CODIGO del oficiniesta se pasara desde el servidor en la consulta
+        // recuerda que aqui aun no vamos a firmar, sino que vamos a enviar indiscriminadamente a todos
+        // YA CON EL CODIGO VAMOS A ACTUALIZAR LA FIRMA Y LE VAMOS A PASAR LA URL
+        // LA URL TIENE QUE ESTAR, ENTONCES VAMOS A TRABALHAR CON EL VALOR DE "FIRM" PARA
+        // QUE SE MUESTRE SOLO CUANDO SEA VERDADERO
         return axios.post(`${API.URI}/newDesmobilizationDocument`, {name: name, perfil: perfil}, {headers: authHeader()})
     }
 

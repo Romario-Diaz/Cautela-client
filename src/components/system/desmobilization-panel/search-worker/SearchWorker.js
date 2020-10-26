@@ -3,7 +3,7 @@ import desmobilizationService from '../../../../services/desmobilization.service
 import DesmobilizationService from '../../../../services/desmobilization.service'
 import '../styles/search-worker.css'
 
-const SearchWorker = ({ setWorker, setOfficersFirm, setLiderFirm, setReasonRes, setWorkerFirm }) => {
+const SearchWorker = ({ setWorker, setOfficersFirm, setLiderFirm, setReasonRes, setWorkerFirm, setIdDesmo }) => {
 
     const [dni, setDni] = useState()
     const [reason, setReason] = useState("RENUNCIA")
@@ -14,6 +14,7 @@ const SearchWorker = ({ setWorker, setOfficersFirm, setLiderFirm, setReasonRes, 
             setWorker(result.data.worker)
             if (result.data.demobilization._id) {
                 setId(result.data.demobilization._id)
+                setIdDesmo(result.data.demobilization._id)
                 setOfficersFirm(result.data.demobilization.firmsOfficers)
                 setLiderFirm(result.data.demobilization.liderFirm)
                 setReasonRes(result.data.demobilization.reason)

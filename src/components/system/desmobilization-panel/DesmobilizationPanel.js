@@ -7,7 +7,7 @@ import './styles/desmobilization-panel.css'
 const DesmobilizationPanel = () => {
 
     const [worker, setWorker] = useState([])
-    // const [id, setId] = useState("")
+    const [idDesmo, setIdDesmo] = useState("")
     const [OfficersFirm, setOfficersFirm] = useState([])
     const [liderFirm, setLiderFirm] = useState()
     const [reasonRes, setReasonRes] = useState("")
@@ -17,7 +17,7 @@ const DesmobilizationPanel = () => {
         <main className="panel-admin-main">
             <SearchWorker
                 setWorker={setWorker}
-                // setId={setId}
+                setIdDesmo={setIdDesmo}
                 setOfficersFirm={setOfficersFirm}
                 setLiderFirm={setLiderFirm}
                 setReasonRes={setReasonRes}
@@ -44,7 +44,8 @@ const DesmobilizationPanel = () => {
                     />
                     <WorkerPhoto
                         name={worker[0].fullname}
-                        perfil={worker[0].perfil} />
+                        perfil={worker[0].perfil}
+                        idDesmo={idDesmo} />
                 </div>
             }
 
