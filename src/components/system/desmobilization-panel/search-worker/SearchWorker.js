@@ -25,7 +25,7 @@ const SearchWorker = ({ setWorker, setOfficersFirm, setLiderFirm, setReasonRes, 
 
     const cancelDesmo = async () => {
         desmobilizationService.cancelDesmobilization(id).then(() => {
-            window.location.href="/admin_panel"
+            window.location.href="/admin_panel/make-desmobilization-panel"
         })
     }
 

@@ -5,7 +5,7 @@ import './App.css';
 import Home from './components/home/Home'
 import Login from './components/login/Login'
 import PanelAdmin from './components/system/PanelAdmin'
-import PageNotFound from './components/pageNotFound/PageNotFound'
+// import PageNotFound from './components/pageNotFound/PageNotFound'
 
 
 function App() {
@@ -14,10 +14,15 @@ function App() {
       <Router>
         {/* <Navbar /> */}
         <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/admin_panel" component= {PanelAdmin} />
-          <Route component={PageNotFound} />          
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/login" >
+            <Login />
+          </Route>
+          <Route  path="/admin_panel">
+            <PanelAdmin />
+          </Route>
         </Switch>
       </Router>
     </>

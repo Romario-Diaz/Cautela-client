@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './sidebar.css'
 
-function Sidebar({areaUserOfficer}) {
+function Sidebar({ areaUserOfficer, views }) {
+    console.log("las vistaassaaasa : ", views)
     return (
         <>
             <aside className="sidebar">
@@ -12,12 +13,11 @@ function Sidebar({areaUserOfficer}) {
                 </div>
                 <div>
                     <ul>
-                        <li className="sidebar-list">
-                            <Link to="#" className="sidebar-item"><span className="sidebar-item-text">Desmovilizacion</span> </Link>
-                        </li>
-                        <li className="sidebar-list">
-                            <Link to="#" className="sidebar-item"><span className="sidebar-item-text">Cautela</span> </Link>
-                        </li>
+                        {views.map((viewer) =>
+                            <li className="sidebar-list" key={viewer.view}>
+                                <Link to={viewer.url} className="sidebar-item"><span className="sidebar-item-text">{viewer.view}</span> </Link>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </aside>

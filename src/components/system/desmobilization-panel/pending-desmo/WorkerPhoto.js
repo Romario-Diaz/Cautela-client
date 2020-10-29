@@ -6,8 +6,9 @@ const WorkerPhoto = ({name, perfil, idDesmo}) => {
 
     const sendDocumentToOfficers = () => {
         console.log("se ha creado un documento", idDesmo)
-        DesmobilizationService.newDesmobilizationDocument(name, perfil).then((result) => {
-            console.log(`el resultado : ${result}`)
+        DesmobilizationService.sendDocumentToOfficers(name, perfil, idDesmo).then((result) => {
+            console.log("el resultado : ", result)
+            window.location.href="/admin_panel/make-desmobilization-panel"
         })
     }
 
