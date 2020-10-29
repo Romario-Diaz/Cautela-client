@@ -23,7 +23,7 @@ const DesmobilizationPanel = () => {
 
     return (
         <>
-            <h1>Algo distinto!!!</h1>       
+            <h1>Algo distinto !!!</h1>       
         </>
     )
 }
