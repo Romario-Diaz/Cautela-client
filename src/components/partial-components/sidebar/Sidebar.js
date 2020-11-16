@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import './sidebar.css'
 
 function Sidebar({ areaUserOfficer, views }) {
-    console.log("las vistaassaaasa : ", views)
     return (
         <>
             <aside className="sidebar">
@@ -15,7 +14,7 @@ function Sidebar({ areaUserOfficer, views }) {
                     <ul>
                         {views.map((viewer) =>
                             <li className="sidebar-list" key={viewer.view}>
-                                <Link to={viewer.url} className="sidebar-item"><span className="sidebar-item-text">{viewer.view}</span> </Link>
+                                <Link to={`${viewer.url}`} className="sidebar-item"><span className="sidebar-item-text">{viewer.view}</span> </Link>
                             </li>
                         )}
                     </ul>

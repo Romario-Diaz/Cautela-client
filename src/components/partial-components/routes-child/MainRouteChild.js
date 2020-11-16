@@ -8,9 +8,9 @@ import MakeDesmobilizationPanel from '../../system/desmobilization-panel/MakeDes
 import DesmobilizationPanel from '../../system/desmobilization-panel/DesmobilizationPanel'
 import PageNotFound from '../../pageNotFound/PageNotFound'
 
-const MainRouteChild = () => {
+const MainRouteChild = ({codeOfficer}) => {
+
     let match = useRouteMatch()
-    console.log("la url : ", match)
     return (
         <>
             <Switch>
@@ -18,7 +18,7 @@ const MainRouteChild = () => {
                     <h2>Este es el dashboard!!!</h2>
                 </Route>
 
-                <Route exact path={`${match.path}/desmobilization-panel`} component={DesmobilizationPanel} />
+                <Route exact path={`${match.path}/desmobilization-panel/:codeOfficer`} component={DesmobilizationPanel} />
 
                 <Route exact path={`${match.path}/make-desmobilization-panel`} component={MakeDesmobilizationPanel} />
 

@@ -14,11 +14,14 @@ function PanelAdmin() {
 
     const [userOfficerName, setUserOfficerName] = useState("")
     const [userOfficerArea, setUserOfficerArea] = useState("")
+    const [userCode, setUserCode] = useState("")
     const [views, setViews] = useState([])
 
     useEffect(() => {
         async function getCurrentUser() {
             const userData = await UserService.getDataUser()
+            console.log("el usuario : ", userData.data[0].code)
+            await setUserCode(userData.data[0].code)
             await setUserOfficerName(userData.data[0].fullname)
             await setUserOfficerArea(userData.data[0].area)
             await setViews(userData.data[0].views)
@@ -34,7 +37,9 @@ function PanelAdmin() {
                 views={views}
             />
             <main className="panel-admin-main">
-                <MainRouteChild />
+                <MainRouteChild 
+                    codeOfficer={userCode}
+                />
             </main>
         </>
     )

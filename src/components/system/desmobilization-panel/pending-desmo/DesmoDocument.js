@@ -1,12 +1,28 @@
-import React from 'react'
-// import DesmobilizationService from '../../../../services/desmobilization.service'
+import React, { useEffect, useState } from 'react'
+import DesmobilizationService from '../../../../services/desmobilization.service'
 import '../styles/desmo-document.css'
 
 const DesmoDocument = ({
-    id, name, position, dateEnd, code, area,
-    OfficersFirm, liderFirm, reasonRes, workerFirm
+    idDesmo, name, position, dateEnd, code, area,
+    OfficersFirm, liderFirm, reasonRes, workerFirm, rrhh
 }) => {
 
+    const [myFirms, setMyFirms] = useState([])
+
+    useEffect(() => {
+        function _getOneDesmobilization () {
+            if(rrhh === false) {
+                DesmobilizationService.getOneDesmobilization(idDesmo).then((result) => {
+                    console.log("la desmobilizacion que estoy buscando : ", result.data[0].firmsOfficers)
+                    setMyFirms(result.data[0].firmsOfficers)
+                })
+            }else {
+                setMyFirms(OfficersFirm)
+            }
+        }
+
+        _getOneDesmobilization()
+    },[idDesmo,rrhh, OfficersFirm])
 
     return (
         <>
@@ -71,7 +87,7 @@ const DesmoDocument = ({
                         <div className="void-div">
 
                         </div>
-                        {OfficersFirm.map((firm) =>
+                        {myFirms.map((firm) =>
                             <div className="document-areas" key={firm.area}>
                                 <p className="areas-title"><strong> {firm.area} </strong> </p>
                                 <span className="dos-puntos-areas"><strong>:</strong></span>
@@ -79,13 +95,13 @@ const DesmoDocument = ({
                                     <div>
                                         <strong> DEBE : </strong>.....................................
                                     </div>
-                                    
+
                                     <div>
-                                        {firm.firmUrl ? 
-                                            <img src={firm.firmUrl} className="firm-worker" alt="aqui ira la imagen"/>
-                                        :
-                                        <p></p>
-                                    }
+                                        {firm.firm !== "pending" ?
+                                            <img src={firm.firmUrl} className="firm-worker" alt="aqui ira la imagen" />
+                                            :
+                                            <p></p>
+                                        }
                                         <strong>NO DEBE :</strong>.........................................
                                     </div>
                                 </div>
@@ -96,8 +112,8 @@ const DesmoDocument = ({
                     <div className="document-firm">
                         <div className="document-firm-lider">
                             {liderFirm ?
-                                <img className="firm-bottom" src={liderFirm} alt="aqui ira la imagen"/>
-                            :
+                                <img className="firm-bottom" src={liderFirm} alt="aqui ira la imagen" />
+                                :
                                 <p></p>
                             }
 
@@ -106,8 +122,8 @@ const DesmoDocument = ({
                         </div>
                         <div className="document-firm-worker">
                             {workerFirm ?
-                                <img className="firm-bottom" src={liderFirm} alt="aqui ira la imagen"/>
-                            :
+                                <img className="firm-bottom" src={liderFirm} alt="aqui ira la imagen" />
+                                :
                                 <p></p>
                             }
                             <p><strong>____________________________</strong> </p>

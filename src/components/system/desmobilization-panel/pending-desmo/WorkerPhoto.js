@@ -2,13 +2,22 @@ import React from 'react'
 import DesmobilizationService from '../../../../services/desmobilization.service'
 import '../styles/worker-photo.css'
 
-const WorkerPhoto = ({name, perfil, idDesmo}) => {
+const WorkerPhoto = ({name, perfil, idDesmo, rrhh, setDesmobilizaciones, desmobilizaciones, codeOfficer, setLoading, setWorker}) => {
 
     const sendDocumentToOfficers = () => {
-        console.log("se ha creado un documento", idDesmo)
-        DesmobilizationService.sendDocumentToOfficers(name, perfil, idDesmo).then((result) => {
+        setLoading(true)
+        DesmobilizationService.sendDocumentToOfficers(name, perfil, idDesmo, codeOfficer).then((result) => {
             console.log("el resultado : ", result)
-            window.location.href="/admin_panel/make-desmobilization-panel"
+            setWorker([])
+            setLoading(false)
+            // window.location.href="/admin_panel/make-desmobilization-panel"
+        })
+    }
+
+    const firmDocument = () => {
+        DesmobilizationService.firmDocument(codeOfficer, idDesmo).then((result) => {
+            const filtredData = desmobilizaciones.filter(item => item._id !== idDesmo)
+            setDesmobilizaciones(filtredData)
         })
     }
 
@@ -21,7 +30,11 @@ const WorkerPhoto = ({name, perfil, idDesmo}) => {
                 <p className="name-user">{name}</p>
                 <div className="buttons-container">
                     <div className="">
-                        <button className="button" onClick={sendDocumentToOfficers}>Enviar Documento</button>
+                        {rrhh === true ?
+                            <button className="button" onClick={sendDocumentToOfficers}>Enviar Documento</button> 
+                            :
+                            <button className="button" onClick={firmDocument}>Firmar</button>
+                        } 
                     </div>
                 </div>
             </div>
