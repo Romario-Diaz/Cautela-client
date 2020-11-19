@@ -2,8 +2,15 @@ import axios from 'axios'
 import authHeader from './auth-header'
 
 import API from '../util/const'
+let result = 0
 
 class DesmobilizationService {
+    addReportCount(value) {
+        console.log("la reportada : ", value)
+        result = value + result
+        return result
+    }
+
     getAllDesmobilizations(codeOfficer) {
         console.log("vamos a obtener con este codigo del ofinista : ", codeOfficer)
         return axios.get(`${API.URI}/getAllDesmobilizations/${codeOfficer}`, { headers: authHeader() })

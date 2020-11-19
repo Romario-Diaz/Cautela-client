@@ -31,7 +31,7 @@ const DesmoDocument = ({
                     <div className="void-div" ></div>
                     <div className="document-head">
                         <div className="document-logo">
-                            <img src={require('../../../../assets/images/logo.png')} className="image-user" alt="" />
+                            <img src={'http://localhost:8000/statics/logo.png'} className="image-user" alt="" />
                         </div>
                         <div className="document-title">
                             <h5><strong>DESMOVILIZACION DEL PERSONAL</strong></h5>

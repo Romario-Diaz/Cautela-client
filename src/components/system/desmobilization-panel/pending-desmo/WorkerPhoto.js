@@ -2,7 +2,7 @@ import React from 'react'
 import DesmobilizationService from '../../../../services/desmobilization.service'
 import '../styles/worker-photo.css'
 
-const WorkerPhoto = ({name, perfil, idDesmo, rrhh, setDesmobilizaciones, desmobilizaciones, codeOfficer, setLoading, setWorker}) => {
+const WorkerPhoto = ({name, perfil, idDesmo, rrhh, setDesmobilizaciones, desmobilizaciones, codeOfficer, setLoading, setWorker, setModalOpen}) => {
 
     const sendDocumentToOfficers = () => {
         setLoading(true)
@@ -16,8 +16,15 @@ const WorkerPhoto = ({name, perfil, idDesmo, rrhh, setDesmobilizaciones, desmobi
 
     const firmDocument = () => {
         DesmobilizationService.firmDocument(codeOfficer, idDesmo).then((result) => {
-            const filtredData = desmobilizaciones.filter(item => item._id !== idDesmo)
-            setDesmobilizaciones(filtredData)
+            // if(modal === true) {
+            //     console.log("no muestres nada ")
+            // }else {
+                const filtredData = desmobilizaciones.filter(item => item._id !== idDesmo)
+                setDesmobilizaciones(filtredData)
+                setModalOpen(false)
+                DesmobilizationService.addReportCount(1);
+            // }
+
         })
     }
 

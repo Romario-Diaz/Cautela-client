@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import LinkReports from './LinkReports'
 import './sidebar.css'
 
 function Sidebar({ areaUserOfficer, views }) {
@@ -7,7 +8,7 @@ function Sidebar({ areaUserOfficer, views }) {
         <>
             <aside className="sidebar">
                 <div className="sidebar-header">
-                    <img src={require('../../../assets/images/user.png')} alt="" />
+                    <img src={'http://localhost:8000/statics/user.png'} alt="" />
                     <p className="areaOffice">{areaUserOfficer}</p>
                 </div>
                 <div>
@@ -17,6 +18,9 @@ function Sidebar({ areaUserOfficer, views }) {
                                 <Link to={`${viewer.url}`} className="sidebar-item"><span className="sidebar-item-text">{viewer.view}</span> </Link>
                             </li>
                         )}
+                        <li className="sidebar-list">
+                            <LinkReports nameUrl="Reportes"/>
+                        </li>
                     </ul>
                 </div>
             </aside>
