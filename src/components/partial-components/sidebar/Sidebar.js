@@ -19,7 +19,11 @@ function Sidebar({ areaUserOfficer, views }) {
                             </li>
                         )}
                         <li className="sidebar-list">
-                            <LinkReports nameUrl="Reportes"/>
+                            <LinkReports 
+                            nameUrl="Reportes"
+                            // countReports={countReports}
+                            // setCountReports={setCountReports}
+                            />
                         </li>
                     </ul>
                 </div>

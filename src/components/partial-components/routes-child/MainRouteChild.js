@@ -7,13 +7,17 @@ import {
 import MakeDesmobilizationPanel from '../../system/desmobilization-panel/MakeDesmobilizationPanel'
 import DesmobilizationPanel from '../../system/desmobilization-panel/DesmobilizationPanel'
 import DesmoList from '../../system/desmobilization-panel/DesmoList'
+
+import Reports from '../../system/reports/Reports'
+import ListReports from '../../system/reports/ListReports'
+
 import PageNotFound from '../../pageNotFound/PageNotFound'
 
 const MainRouteChild = ({codeOfficer}) => {
 
     let match = useRouteMatch()
 
-    console.log("el match de las rutas : ", match)
+    // console.log("el match de las rutas : ", match)
 
     return (
         <>
@@ -28,6 +32,9 @@ const MainRouteChild = ({codeOfficer}) => {
 
                 <Route exact path={`${match.path}/make-desmobilization-panel`} component={MakeDesmobilizationPanel} />
 
+                <Route exact path={`${match.path}/reports/:idDesmo`} component={Reports} />
+
+                <Route exact path={`${match.path}/reports`} component={ListReports} />
 
                 <Route component={PageNotFound} />
 

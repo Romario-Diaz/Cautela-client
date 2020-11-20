@@ -9,7 +9,7 @@ const TitleDesmo = ({counter}) => {
 
     let match = useRouteMatch()
 
-    console.log("el matchhhh : ", match.url)
+    // console.log("el matchhhh : ", match.url)
 
     return(
         <div className="title-container">

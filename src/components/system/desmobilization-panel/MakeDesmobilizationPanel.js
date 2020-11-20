@@ -59,7 +59,8 @@ const MakeDesmobilizationPanel = () => {
                                 idDesmo={idDesmo}
                                 rrhh={true} 
                                 setLoading={setLoading}
-                                setWorker={setWorker}/>
+                                setWorker={setWorker}
+                                modal={false}/>
                         </div>
                     }
                 </>

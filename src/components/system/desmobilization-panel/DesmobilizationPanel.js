@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { TouchBallLoading } from 'react-loadingg'
+
 import TitleDesmo from './search-worker/TitleDesmo'
 // import SearchWorker from './search-worker/SearchWorker'
 import DesmoDocument from './pending-desmo/DesmoDocument'
@@ -55,6 +55,7 @@ const DesmobilizationPanel = ({match}) => {
                             setDesmobilizaciones={setDesmobilizaciones}
                             desmobilizaciones={desmobilizaciones}
                             codeOfficer={match.params.codeOfficer}
+                            modal={false}
                         />
                     </div>
             }

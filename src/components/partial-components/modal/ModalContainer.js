@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from 'react-modal'
 import DesmoDocument from '../../system/desmobilization-panel/pending-desmo/DesmoDocument'
 import WorkerPhoto from '../../system/desmobilization-panel/pending-desmo/WorkerPhoto'
@@ -63,6 +63,7 @@ const ModalContainer = ({ modalOpen, setModalOpen, desmo, match, desmobilizacion
                             setDesmobilizaciones={setDesmobilizaciones}
                             desmobilizaciones={desmobilizaciones}
                             codeOfficer={match.params.codeOfficer}
+                            modal={true}
                         />
                     </div>
                 </>

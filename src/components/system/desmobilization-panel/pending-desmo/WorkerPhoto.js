@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import { Redirect } from 'react-router-dom'
 import DesmobilizationService from '../../../../services/desmobilization.service'
 import '../styles/worker-photo.css'
 
-const WorkerPhoto = ({name, perfil, idDesmo, rrhh, setDesmobilizaciones, desmobilizaciones, codeOfficer, setLoading, setWorker, setModalOpen}) => {
+const WorkerPhoto = ({name, perfil, idDesmo, rrhh, setDesmobilizaciones, desmobilizaciones, codeOfficer, setLoading, setWorker, setModalOpen, modal}) => {
+
+    const [redirect, setRedirect] = useState(false)
 
     const sendDocumentToOfficers = () => {
         setLoading(true)
@@ -21,8 +25,14 @@ const WorkerPhoto = ({name, perfil, idDesmo, rrhh, setDesmobilizaciones, desmobi
             // }else {
                 const filtredData = desmobilizaciones.filter(item => item._id !== idDesmo)
                 setDesmobilizaciones(filtredData)
-                setModalOpen(false)
-                DesmobilizationService.addReportCount(1);
+
+                if(modal === true) {
+                    setModalOpen(false)
+                }
+
+                setRedirect(true)
+                
+                // DesmobilizationService.addReportCount(1);
             // }
 
         })
@@ -45,6 +55,15 @@ const WorkerPhoto = ({name, perfil, idDesmo, rrhh, setDesmobilizaciones, desmobi
                     </div>
                 </div>
             </div>
+
+            {
+                redirect ? 
+                   
+                    <Redirect to={`/admin_panel/reports/${idDesmo}`}/>
+                :
+                <p></p>
+            }
+
         </>
     )
 }

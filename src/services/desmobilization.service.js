@@ -2,32 +2,43 @@ import axios from 'axios'
 import authHeader from './auth-header'
 
 import API from '../util/const'
-let result = 0
+
+var result = 0
 
 class DesmobilizationService {
+ 
+    
+
     addReportCount(value) {
         console.log("la reportada : ", value)
         result = value + result
         return result
     }
 
+    getReportCount(setCountReports, countReports) {
+        console.log("el resukltado : ", result)
+        console.log("desde el componenteeeeeee", countReports)
+        // setCountReports(result)
+        return result
+    }
+
     getAllDesmobilizations(codeOfficer) {
-        console.log("vamos a obtener con este codigo del ofinista : ", codeOfficer)
+        // console.log("vamos a obtener con este codigo del ofinista : ", codeOfficer)
         return axios.get(`${API.URI}/getAllDesmobilizations/${codeOfficer}`, { headers: authHeader() })
     }
 
     getOneDesmobilization(idDesmo) {
-        console.log("el id de la resmobilizacion", idDesmo)
+        // console.log("el id de la resmobilizacion", idDesmo)
         return axios.get(`${API.URI}/getOneDesmobilization/${idDesmo}`, { headers: authHeader() })
     }
 
     sendDocumentToOfficers(name, perfil, idDesmo, codeOfficer) {
-        console.log("el dcodigo del oficiista : ", codeOfficer)
+        // console.log("el dcodigo del oficiista : ", codeOfficer)
         return axios.post(`${API.URI}/sendDocumentToOfficers`, { name: name, perfil: perfil, idDesmo: idDesmo, codeOfficer: codeOfficer }, { headers: authHeader() })
     }
 
     firmDocument(codeOfficer, idDesmo) {
-        console.log("se va a firmar el documento")
+        // console.log("se va a firmar el documento")
         return axios.post(`${API.URI}/firmDocument`, {codeOfficer: codeOfficer, idDesmo: idDesmo}, { headers: authHeader() })
     }
 

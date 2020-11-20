@@ -13,7 +13,7 @@ const DesmoDocument = ({
         function _getOneDesmobilization () {
             if(rrhh === false) {
                 DesmobilizationService.getOneDesmobilization(idDesmo).then((result) => {
-                    console.log("la desmobilizacion que estoy buscando : ", result.data[0].firmsOfficers)
+                    // console.log("la desmobilizacion que estoy buscando : ", result.data[0].firmsOfficers)
                     setMyFirms(result.data[0].firmsOfficers)
                 })
             }else {
