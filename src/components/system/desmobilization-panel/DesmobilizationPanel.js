@@ -26,9 +26,14 @@ const DesmobilizationPanel = ({match}) => {
 
     return (
         <>
-            <TitleDesmo
+            {desmobilizaciones.length === 0 ? 
+                <p>aun no</p>
+                :
+                <TitleDesmo
                 counter={desmobilizaciones.length}
-            />
+                />
+            }
+
             <hr className="space-line" />
             {
                 desmobilizaciones.length === 0 ?

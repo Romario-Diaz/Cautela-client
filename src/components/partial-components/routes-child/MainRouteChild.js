@@ -32,7 +32,7 @@ const MainRouteChild = ({codeOfficer}) => {
 
                 <Route exact path={`${match.path}/make-desmobilization-panel`} component={MakeDesmobilizationPanel} />
 
-                <Route exact path={`${match.path}/reports/:idDesmo`} component={Reports} />
+                <Route exact path={`${match.path}/reports/:idReport`} component={Reports} />
 
                 <Route exact path={`${match.path}/reports`} component={ListReports} />
 

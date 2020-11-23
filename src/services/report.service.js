@@ -9,11 +9,9 @@ class ReportService {
         return axios.get(`${API.URI}/getAllReports`, {headers: authHeader()})
     }
 
-    // getAllDesmobilizations(codeOfficer) {
-    //     // console.log("vamos a obtener con este codigo del ofinista : ", codeOfficer)
-    //     return axios.get(`${API.URI}/getAllDesmobilizations/${codeOfficer}`, { headers: authHeader() })
-    // }
-
+    getOneReport (idReport) {
+        return axios.get(`${API.URI}/getOneReport/${idReport}`, {headers: authHeader()})
+    }
 }
 
 export default new ReportService()

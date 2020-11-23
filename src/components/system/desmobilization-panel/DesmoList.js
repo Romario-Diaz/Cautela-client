@@ -45,7 +45,7 @@ const DesmoList = ({ match }) => {
                 </thead>
                 <tbody>
                     {desmobilizaciones.map((item) => 
-                        <tr key={item.workers[0].code}>
+                        <tr key={item._id}>
                             <td>{item.workers[0].code}</td>
                             <td>{item.workers[0].fullname}</td>
                             <td> <button onClick={() => openModal(item)}>Ver !!!</button></td>

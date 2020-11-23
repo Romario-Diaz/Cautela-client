@@ -1,0 +1,12 @@
+.text-table {
+    display: inline-block;
+    text-align: center;
+}
+
+.pending {
+    color: red;
+}
+
+.finished {
+    color: green;
+}

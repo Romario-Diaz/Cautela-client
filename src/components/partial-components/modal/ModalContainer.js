@@ -24,8 +24,6 @@ const ModalContainer = ({ modalOpen, setModalOpen, desmo, match, desmobilizacion
         setModalOpen(false)
     }
 
-    // let match = useS
-
     return (
         <Modal
             isOpen={modalOpen}

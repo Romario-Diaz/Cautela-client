@@ -1,5 +1,4 @@
-
-export default {
-    URI: 'http://localhost:8000'
-    // URI: 'https://desmo-server.herokuapp.com'
+var API = {
+    URI : "http://localhost:8000"
 }
+export default API

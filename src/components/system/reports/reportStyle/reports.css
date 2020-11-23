@@ -1,0 +1,39 @@
+
+.header-report {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-report {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+}
+
+.body-report {
+    width: 70%;
+    margin: auto;
+}
+
+.footer-report {
+    width: 70%;
+    margin: auto;
+}
+
+.img-report {
+    width: 200px;
+    display: inline-block;
+    margin: auto;
+}
+
+.img-container-report {
+    width: 200px;
+    margin: auto;
+}
+
+.fotter-options {
+    display: flex;
+}
